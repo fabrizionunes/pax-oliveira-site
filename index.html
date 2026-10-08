@@ -1131,13 +1131,13 @@ var CONVENIOS_EXEMPLO = [
       (wa?'<a class="wa" href="https://wa.me/'+wa+'" target="_blank" rel="noopener" aria-label="WhatsApp de '+esc(o.nome)+'"><svg><use href="#i-wa"/></svg></a>':'')+'</div></li>';
   }
   function render(){
-    var t=norm(q.value), kf=kindSel.value, cf=citySel.value, filtering=!!(t||kf||cf);
+    var t=norm(q.value), kf=kindSel.value, cf=citySel.value;
     var list=data.filter(function(o){return (!kf||o.tipo===kf)&&(!cf||o.cidade===cf)&&(!t||o._s.indexOf(t)>-1);});
     var groups={}; list.forEach(function(o){(groups[o[view]]=groups[o[view]]||[]).push(o);});
     var names=Object.keys(groups).sort(cmp);
     listEl.innerHTML=names.map(function(g,i){
       var ic=view==='tipo'?(ICON[norm(g)]||'i-heart'):'i-pin';
-      return '<details class="cg"'+((filtering||i===0||names.length<=2)?' open':'')+'><summary><span class="cg-ic"><svg><use href="#'+ic+'"/></svg></span>'+esc(g)+' <small>'+groups[g].length+'</small><span class="cg-chev" aria-hidden="true"></span></summary><ul>'+groups[g].map(row).join('')+'</ul></details>';
+      return '<details class="cg"'+(t?' open':'')+'><summary><span class="cg-ic"><svg><use href="#'+ic+'"/></svg></span>'+esc(g)+' <small>'+groups[g].length+'</small><span class="cg-chev" aria-hidden="true"></span></summary><ul>'+groups[g].map(row).join('')+'</ul></details>';
     }).join('');
     emptyEl.hidden=list.length>0; toggleBtn.hidden=names.length<2; syncToggle();
     countEl.textContent=list.length+(list.length===1?' convênio':' convênios')+' em '+names.length+(view==='tipo'?(names.length===1?' categoria':' categorias'):(names.length===1?' cidade':' cidades'));
