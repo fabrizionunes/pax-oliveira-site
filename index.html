@@ -471,6 +471,19 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
 @media (max-width:900px){.conv-teaser{grid-template-columns:1fr;gap:24px}}
 .conv-title{font-size:clamp(2.4rem,5.2vw,3.8rem)!important}
 .conv-tag{font-family:var(--display);font-style:italic;color:var(--royal);font-size:clamp(1.15rem,2vw,1.4rem)!important;margin-top:-4px}
+.net-card{margin-top:16px;border-radius:22px;padding:20px;background:linear-gradient(140deg,#EAF7FE,#D9F1FC);border:1px solid #BFE6F8;display:grid;gap:14px}
+.net-top{display:flex;gap:14px;align-items:center}
+.net-ic{width:48px;height:48px;border-radius:14px;background:var(--primary);color:#fff;display:grid;place-items:center;flex:none}
+.net-ic svg{width:24px;height:24px}
+.net-card h3{font-size:1.5rem}
+.net-card p{color:var(--muted);font-size:.93rem}
+.net-card .conv-cats{gap:8px}
+.net-card .conv-cats:empty{display:none}
+.net-card .conv-cats a{padding:6px 12px 6px 6px;font-size:.88rem}
+.net-card .conv-cats a i{width:28px;height:28px}
+.net-card .conv-cats a i svg{width:15px;height:15px}
+.net-btn{justify-self:start;white-space:normal}
+.net-btn .arr{transition:transform .2s}.net-btn:hover .arr{transform:translateX(4px)}
 </style>
 </head>
 <body>
@@ -689,7 +702,7 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
   </div>
 </section>
 
-<!-- EMPRESA -->
+<!-- QUEM SOMOS -->
 <section class="sec" id="empresa">
   <div class="wrap">
     <div class="sec-head reveal" style="margin-bottom:24px">
@@ -702,25 +715,8 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
       <article class="reveal"><div class="ic"><svg><use href="#i-heart"/></svg></div><div><h3>Valores</h3><p>O que orienta cada atendimento:</p>
         <div class="values"><span>Respeito</span><span>Empatia</span><span>Transparência</span><span>Compromisso</span><span>Tradição familiar</span><span>Presença 24h</span></div></div></article>
     </div>
-
-    <div class="legacy-wrap" style="margin-top:clamp(48px,7vw,80px)">
-    <div class="legacy-head legacy-head--short reveal">
-      <span class="eyebrow">Nosso legado</span>
-      <h2>Uma história de coragem, trabalho e tradição</h2>
-      <p class="lede">Toda grande história começa com um sonho. Algumas começam também com coragem para deixar tudo para trás e acreditar que é possível construir algo maior.</p>
-    </div>
-
-    <div class="legacy-cta reveal">
-      <div class="lc-years"><b>50+</b><span>anos<br>desde 1976</span></div>
-      <p>De motorista de funerária a fundador de uma empresa que cuida de famílias há mais de cinco décadas.</p>
-      <a class="btn btn-primary" href="historia/"><svg><use href="#i-heart"/></svg>Ler a história completa</a>
-    </div>
-    </div>
   </div>
 </section>
-
-
-
 
 <!-- BENEFÍCIOS EM VIDA -->
 <section class="sec" id="beneficios">
@@ -840,26 +836,42 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
         <div class="perk reveal"><i><svg><use href="#i-lab"/></svg></i><div><b>Exames laboratoriais</b><span>Análises clínicas</span></div></div>
         <div class="perk reveal"><i><svg><use href="#i-scan"/></svg></i><div><b>Imagem</b><span>Ultrassom, ressonância e tomografia</span></div></div>
       </div>
+      <div class="net-card reveal" id="convenios">
+        <div class="net-top">
+          <span class="net-ic"><svg><use href="#i-hands"/></svg></span>
+          <div><h3>Rede de convênios</h3><p id="conv-sum">Clínicas, hospitais, laboratórios e especialistas parceiros.</p></div>
+        </div>
+        <div class="conv-cats" id="conv-cats"></div>
+        <a class="btn btn-primary net-btn" href="convenios/">Ver rede de convênios <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSSO LEGADO -->
+<section class="sec" id="legado" style="padding-top:0">
+  <div class="wrap">
+    <div class="legacy-head legacy-head--short reveal">
+      <span class="eyebrow">Nosso legado</span>
+      <h2>Uma história de coragem, trabalho e tradição</h2>
+      <p class="lede">Toda grande história começa com um sonho. Algumas começam também com coragem para deixar tudo para trás e acreditar que é possível construir algo maior.</p>
+    </div>
+
+    <div class="legacy-cta reveal">
+      <div class="lc-years"><b>50+</b><span>anos<br>desde 1976</span></div>
+      <p>De motorista de funerária a fundador de uma empresa que cuida de famílias há mais de cinco décadas.</p>
+      <a class="btn btn-primary" href="historia/"><svg><use href="#i-heart"/></svg>Ler a história completa</a>
     </div>
   </div>
 </section>
 
 
-<!-- CONVÊNIOS (resumo; lista completa em /convenios) -->
-<section class="sec conv-bg" id="convenios">
-  <div class="wrap conv-teaser">
-    <div class="sec-head reveal" style="margin-bottom:0">
-      <h2 class="conv-title">Rede de convênios</h2>
-      <p class="conv-tag">Onde o seu plano também cuida de você</p>
-      <p>Clínicas, hospitais, laboratórios e especialistas parceiros com condições especiais para associados Pax Oliveira.</p>
-      <div><a class="btn btn-primary" href="convenios/"><svg><use href="#i-steth"/></svg>Ver todos os convênios</a></div>
-    </div>
-    <div class="reveal">
-      <p class="conv-count" id="conv-sum">Carregando categorias…</p>
-      <div class="conv-cats" id="conv-cats"></div>
-    </div>
-  </div>
-</section>
+
+
+
+
+
+
 
 <!-- SERVIÇOS -->
 <section class="sec plans-bg" id="servicos">
@@ -1089,7 +1101,7 @@ var CONVENIOS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZ9TEw
   function parseCSV(txt){var rows=[],row=[],f='',i=0,inq=false,c;txt=txt.replace(/^﻿/,'');var l0=txt.split('\n')[0],sep=(l0.split(';').length>l0.split(',').length)?';':',';
     for(;i<txt.length;i++){c=txt[i];if(inq){if(c=='"'){if(txt[i+1]=='"'){f+='"';i++;}else inq=false;}else f+=c;}else if(c=='"')inq=true;else if(c==sep){row.push(f);f='';}else if(c=='\n'){row.push(f);rows.push(row);row=[];f='';}else if(c!='\r')f+=c;}
     if(f!==''||row.length){row.push(f);rows.push(row);}return rows;}
-  function done(){sum.textContent='Veja a lista completa de convênios.';}
+  function done(){}
   if(!CONVENIOS_CSV_URL){done();return;}
   fetch(CONVENIOS_CSV_URL,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(t){
     var rows=parseCSV(t);if(!rows.length)throw 0;var h=rows[0].map(function(x){return norm(x).replace(/[^a-z]/g,'');});
@@ -1098,7 +1110,7 @@ var CONVENIOS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZ9TEw
     rows.slice(1).forEach(function(r){if(!(r[in_]||'').trim())return;if(ia>-1&&/^(nao|n|0|false|inativo)$/.test(norm(r[ia])))return;
       var tp=(r[it]||'').trim()||'Outros';tp=tp.charAt(0).toUpperCase()+tp.slice(1);k[tp]=(k[tp]||0)+1;n++;if(ic>-1&&r[ic])cities[norm(r[ic])]=1;});
     if(!n)throw 0;var nc=Object.keys(cities).length;
-    sum.textContent=n+(n===1?' convênio':' convênios')+(nc?' em '+nc+(nc===1?' cidade':' cidades'):'')+'. Escolha uma categoria:';
+    sum.textContent=n+(n===1?' parceiro':' parceiros')+(nc?' em '+nc+(nc===1?' cidade':' cidades'):'')+'. Toque em uma categoria para ver:';
     box.innerHTML=Object.keys(k).sort(function(a,b){return a.localeCompare(b,'pt-BR');}).map(function(t){
       return '<a href="convenios/?tipo='+encodeURIComponent(t)+'"><i><svg><use href="#'+(ICON[norm(t)]||'i-heart')+'"/></svg></i>'+esc(t)+' <small>'+k[t]+'</small></a>';}).join('');
   }).catch(done);
