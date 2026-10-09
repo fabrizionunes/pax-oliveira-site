@@ -444,6 +444,31 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
 /* Revelar ao rolar, a partir de um estado visível */
 .reveal{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.pre{transform:translateY(18px)}
+
+/* ===== v5: botão destaque, subpáginas, resumo de convênios ===== */
+.btn-hero{padding:18px 30px;font-size:1.12rem;box-shadow:0 18px 40px -14px rgba(0,140,210,.7)}
+.btn-hero .arr{transition:transform .2s}
+.btn-hero:hover .arr{transform:translateX(4px)}
+.page-hero{background:linear-gradient(180deg,var(--tint),var(--bg));padding-block:clamp(40px,6vw,72px) clamp(28px,4vw,44px)}
+.crumbs{display:flex;gap:8px;align-items:center;font-size:.88rem;color:var(--muted);margin-bottom:18px}
+.crumbs a{color:var(--royal);font-weight:700;text-decoration:none}
+.page-hero h1{font-size:clamp(2.2rem,5vw,3.6rem);max-width:20ch}
+.page-hero p{color:var(--muted);font-size:1.1rem;max-width:62ch;margin-top:16px}
+.page-hero .lede{font-family:var(--display);color:var(--ink);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.4}
+.cta-band{margin-top:clamp(40px,6vw,64px);border-radius:28px;padding:clamp(24px,4vw,40px);background:linear-gradient(140deg,var(--primary),var(--primary-2));color:#fff;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.cta-band h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+.cta-band p{opacity:.92;margin-top:6px}
+.cta-band .btn{background:#fff;color:var(--royal);white-space:normal}
+.menu a[aria-current="page"]{background:var(--tint);color:var(--royal)}
+.conv-teaser{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.conv-cats{display:flex;flex-wrap:wrap;gap:10px}
+.conv-cats a{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line);text-decoration:none;font-weight:700;color:var(--ink);transition:box-shadow .2s,transform .2s}
+.conv-cats a:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.conv-cats a i{width:34px;height:34px;border-radius:50%;background:var(--tint);color:var(--royal);display:grid;place-items:center}
+.conv-cats a i svg{width:18px;height:18px}
+.conv-cats a small{font-size:.76rem;font-weight:800;color:var(--royal);background:var(--tint);border-radius:999px;padding:2px 9px}
+.conv-teaser .btn{margin-top:22px}
+@media (max-width:900px){.conv-teaser{grid-template-columns:1fr;gap:24px}}
 </style>
 </head>
 <body>
@@ -495,10 +520,10 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
     </a>
     <ul class="menu" id="menu">
       <li><a href="#inicio">Início</a></li>
-      <li><a href="#empresa">A Empresa</a></li>
       <li><a href="#planos">Planos</a></li>
+      <li><a href="#empresa">A Empresa</a></li>
       <li><a href="#beneficios">Benefícios</a></li>
-      <li><a href="#convenios">Convênios</a></li>
+      <li><a href="convenios/">Convênios</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#unidades">Unidades</a></li>
       <li><a href="#contato">Contato</a></li>
@@ -519,7 +544,7 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
       <h1 style="margin-top:16px">Viva o presente. <em>A gente cuida</em> do amanhã da sua família.</h1>
       <p class="lead">Planos de assistência familiar com atendimento humano, capelas climatizadas e descontos em saúde para usar no dia a dia. Tranquilidade para você aproveitar quem você ama.</p>
       <div class="ctas">
-        <a class="btn btn-primary" href="#planos">Conhecer os planos</a>
+        <a class="btn btn-primary btn-hero" href="#planos">Conhecer os planos <span class="arr" aria-hidden="true">→</span></a>
         <a class="btn btn-wa" href="https://wa.me/5567999473005?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20planos%20da%20Pax%20Oliveira." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
       </div>
       <div class="facts">
@@ -548,116 +573,6 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
     <div><svg><use href="#i-pin"/></svg>8 cidades no Mato Grosso do Sul</div>
   </div>
 </div>
-
-<!-- EMPRESA -->
-<section class="sec" id="empresa">
-  <div class="wrap">
-    <div class="legacy-head legacy-head--short reveal">
-      <span class="eyebrow">Nosso legado</span>
-      <h2>Uma história de coragem, trabalho e tradição</h2>
-      <p class="lede">Toda grande história começa com um sonho. Algumas começam também com coragem para deixar tudo para trás e acreditar que é possível construir algo maior.</p>
-    </div>
-
-    <div class="legacy-cta reveal">
-      <div class="lc-years"><b>50+</b><span>anos<br>desde 1976</span></div>
-      <p>De motorista de funerária a fundador de uma empresa que cuida de famílias há mais de cinco décadas.</p>
-      <button type="button" class="btn btn-primary" id="story-open" aria-haspopup="dialog" aria-controls="story"><svg><use href="#i-heart"/></svg>Ler a história completa</button>
-    </div>
-
-    <div class="mvv">
-      <article class="reveal"><div class="ic"><svg><use href="#i-target"/></svg></div><div><h3>Missão</h3><p>Oferecer assistência familiar completa, com acolhimento, dignidade e agilidade, para que cada família atravesse os momentos difíceis com apoio e segurança.</p></div></article>
-      <article class="reveal"><div class="ic"><svg><use href="#i-eye"/></svg></div><div><h3>Visão</h3><p>Ser a empresa de assistência familiar mais lembrada e confiável do Mato Grosso do Sul, próxima das pessoas em cada cidade onde estamos.</p></div></article>
-      <article class="reveal"><div class="ic"><svg><use href="#i-heart"/></svg></div><div><h3>Valores</h3><p>O que orienta cada atendimento:</p>
-        <div class="values"><span>Respeito</span><span>Empatia</span><span>Transparência</span><span>Compromisso</span><span>Tradição familiar</span><span>Presença 24h</span></div></div></article>
-    </div>
-  </div>
-</section>
-
-
-<!-- HISTÓRIA COMPLETA (janela) -->
-<dialog class="story" id="story" aria-labelledby="story-title">
-  <div class="story-bar">
-    <span class="eyebrow">Nosso legado</span>
-    <button type="button" class="story-close" id="story-close" aria-label="Fechar história"><span aria-hidden="true">×</span></button>
-  </div>
-  <div class="story-body">
-    <h2 id="story-title">Uma história de coragem, trabalho e tradição</h2>
-    <p class="story-sub">A trajetória de Luiz Sampaio de Oliveira</p>
-    <div class="legacy">
-      <ol class="timeline">
-        <li>
-          <span class="when">1976</span>
-          <h3>O começo, em Dourados</h3>
-          <p>A história de Luiz Sampaio de Oliveira começou no ano de 1976, na cidade de Dourados, Mato Grosso do Sul. Naquele período, Luiz iniciou sua trajetória profissional trabalhando como motorista de uma funerária.</p>
-          <p>Foi durante esse trabalho que nasceu algo que mudaria para sempre o rumo de sua vida: o amor e o respeito pela profissão de agente funerário.</p>
-          <p>No dia a dia, acompanhando famílias em momentos de dor e despedida, Luiz percebeu que aquela profissão ia muito além de um trabalho. Era uma missão que exigia respeito, responsabilidade, humanidade e dedicação.</p>
-        </li>
-        <li>
-          <span class="when">1980</span>
-          <h3>O primeiro grande passo</h3>
-          <p>Em 1980, surgiu uma oportunidade que mudaria sua história.</p>
-          <p>Uma funerária estava à venda na cidade de Ivinhema, Mato Grosso do Sul. Luiz acreditou que aquele poderia ser o momento de construir seu próprio caminho.</p>
-          <p>Reuniu tudo o que tinha, tomou uma decisão corajosa e mudou-se para Ivinhema, levando consigo não apenas seus bens, mas principalmente um sonho: construir uma empresa e oferecer às famílias um atendimento digno e humano nos momentos mais difíceis da vida.</p>
-          <p>Foi assim que nasceu a <strong>Funerária Bom Jesus</strong>.</p>
-          <p>Os primeiros anos foram marcados por muito trabalho, dificuldades e desafios. Mas Luiz nunca perdeu de vista aquilo que o havia motivado desde o início.</p>
-          <p>Com humildade, dedicação e respeito pelas famílias, a empresa foi conquistando a confiança da comunidade.</p>
-        </li>
-        <li>
-          <span class="when">Crescimento</span>
-          <h3>Crescimento e novos desafios</h3>
-          <p>Com o passar dos anos, a Funerária Bom Jesus se consolidou em Ivinhema.</p>
-          <p>Mas para Luiz, conquistar um espaço não significava parar.</p>
-          <p>Surgiu então um novo desafio: levar o trabalho para Dourados, cidade onde sua trajetória havia começado.</p>
-          <p>Com muito esforço, dedicação e perseverança, uma filial foi aberta e, pouco a pouco, a empresa também conquistou seu espaço no mercado douradense.</p>
-          <p>Era a prova de que aquele sonho iniciado anos antes estava se transformando em uma história de sucesso.</p>
-        </li>
-        <li>
-          <span class="when">Novo projeto</span>
-          <h3>O nascimento de um novo projeto</h3>
-          <p>Com o crescimento das atividades e a necessidade de oferecer ainda mais segurança e tranquilidade às famílias, surgiu um novo projeto: o <strong>Plano PAX Primavera</strong>, que passou a ser um importante braço da Funerária Bom Jesus.</p>
-          <p>O negócio continuou crescendo.</p>
-          <p>A experiência adquirida ao longo dos anos, somada à confiança conquistada junto às famílias, permitiu que a empresa ampliasse sua atuação e fortalecesse sua presença no Mato Grosso do Sul.</p>
-        </li>
-        <li class="now">
-          <span class="when">PAX Oliveira</span>
-          <h3>Uma nova história começa</h3>
-          <p>Com o crescimento dos negócios, chegou o momento de uma nova decisão.</p>
-          <p>A sociedade foi separada e Luiz Sampaio de Oliveira passou a dedicar sua atuação à região do Grande Vale do Ivinhema.</p>
-          <p>Foi então que nasceu uma nova marca, construída sobre os mesmos valores que acompanharam Luiz desde 1976: <strong>PAX OLIVEIRA</strong>.</p>
-          <p>Mais do que uma nova empresa, a PAX Oliveira representa a continuidade de uma história construída com trabalho, coragem, respeito e compromisso com as famílias.</p>
-        </li>
-      </ol>
-
-      <aside class="legacy-side">
-        <div class="years">
-          <b>50+</b>
-          <span>anos de trajetória e tradição</span>
-          <small>Desde 1976</small>
-        </div>
-        <div class="decades">
-          <h3>Mais de cinco décadas de tradição</h3>
-          <p>Desde aquele primeiro dia em que Luiz começou como motorista de uma funerária, muita coisa mudou.</p>
-          <p>Mudaram as cidades, os negócios cresceram, novos desafios apareceram e novas gerações passaram a fazer parte dessa trajetória.</p>
-          <p>Mas uma coisa permaneceu: <strong>o compromisso de cuidar das famílias.</strong></p>
-          <p>Hoje, com mais de 50 anos de trajetória e tradição, a PAX Oliveira segue atendendo famílias, levando acolhimento, segurança e respeito para momentos em que mais precisam.</p>
-        </div>
-      </aside>
-    </div>
-
-    <figure class="closing">
-      <blockquote>
-        <p>Uma história que começou com um homem, um volante e um sonho.</p>
-        <p>Um sonho que atravessou décadas.<br>Um sonho que se transformou em empresa.<br>E uma empresa que se transformou em tradição.</p>
-      </blockquote>
-      <figcaption>
-        <span class="sig"><strong>PAX OLIVEIRA</strong> · Mais de 50 anos de história. Uma vida inteira dedicada a cuidar de famílias.</span>
-        <span>Porque quando uma família precisa, mais do que um serviço, ela precisa de acolhimento, respeito e confiança. E essa é a história que Luiz Sampaio de Oliveira começou a construir em 1976 e que a PAX Oliveira continua escrevendo todos os dias no Mato Grosso do Sul.</span>
-      </figcaption>
-    </figure>
-
-    <div class="story-end"><button type="button" class="btn btn-ghost" id="story-close-2">Voltar ao site</button></div>
-  </div>
-</dialog>
 
 <!-- PLANOS -->
 <section class="sec plans-bg" id="planos">
@@ -772,6 +687,33 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
   </div>
 </section>
 
+<!-- EMPRESA -->
+<section class="sec" id="empresa">
+  <div class="wrap">
+    <div class="legacy-head legacy-head--short reveal">
+      <span class="eyebrow">Nosso legado</span>
+      <h2>Uma história de coragem, trabalho e tradição</h2>
+      <p class="lede">Toda grande história começa com um sonho. Algumas começam também com coragem para deixar tudo para trás e acreditar que é possível construir algo maior.</p>
+    </div>
+
+    <div class="legacy-cta reveal">
+      <div class="lc-years"><b>50+</b><span>anos<br>desde 1976</span></div>
+      <p>De motorista de funerária a fundador de uma empresa que cuida de famílias há mais de cinco décadas.</p>
+      <a class="btn btn-primary" href="historia/"><svg><use href="#i-heart"/></svg>Ler a história completa</a>
+    </div>
+
+    <div class="mvv">
+      <article class="reveal"><div class="ic"><svg><use href="#i-target"/></svg></div><div><h3>Missão</h3><p>Oferecer assistência familiar completa, com acolhimento, dignidade e agilidade, para que cada família atravesse os momentos difíceis com apoio e segurança.</p></div></article>
+      <article class="reveal"><div class="ic"><svg><use href="#i-eye"/></svg></div><div><h3>Visão</h3><p>Ser a empresa de assistência familiar mais lembrada e confiável do Mato Grosso do Sul, próxima das pessoas em cada cidade onde estamos.</p></div></article>
+      <article class="reveal"><div class="ic"><svg><use href="#i-heart"/></svg></div><div><h3>Valores</h3><p>O que orienta cada atendimento:</p>
+        <div class="values"><span>Respeito</span><span>Empatia</span><span>Transparência</span><span>Compromisso</span><span>Tradição familiar</span><span>Presença 24h</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+
+
+
 <!-- BENEFÍCIOS EM VIDA -->
 <section class="sec" id="beneficios">
   <div class="wrap life">
@@ -795,37 +737,19 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
 </section>
 
 
-<!-- CONVÊNIOS (lidos da planilha Google) -->
+<!-- CONVÊNIOS (resumo; lista completa em /convenios) -->
 <section class="sec conv-bg" id="convenios">
-  <div class="wrap">
-    <div class="conv-head reveal">
-      <div class="sec-head" style="margin-bottom:0">
-        <span class="eyebrow">Rede de convênios</span>
-        <h2>Onde o seu plano também cuida de você</h2>
-        <p>Clínicas, hospitais, laboratórios e especialistas parceiros com condições especiais para associados Pax Oliveira. Apresente sua carteirinha no atendimento.</p>
-      </div>
+  <div class="wrap conv-teaser">
+    <div class="sec-head reveal" style="margin-bottom:0">
+      <span class="eyebrow">Rede de convênios</span>
+      <h2>Onde o seu plano também cuida de você</h2>
+      <p>Clínicas, hospitais, laboratórios e especialistas parceiros com condições especiais para associados Pax Oliveira.</p>
+      <div><a class="btn btn-primary" href="convenios/"><svg><use href="#i-steth"/></svg>Ver todos os convênios</a></div>
     </div>
-
-    <div class="conv-tools" role="search">
-      <div class="conv-view" role="radiogroup" aria-label="Organizar lista por">
-        <span>Ver por</span>
-        <button type="button" role="radio" data-v="tipo" aria-checked="true">Categoria</button>
-        <button type="button" role="radio" data-v="cidade" aria-checked="false">Cidade</button>
-      </div>
-      <div class="conv-filters">
-        <label class="conv-search"><svg aria-hidden="true"><use href="#i-scan"/></svg><span class="sr">Buscar convênio</span><input id="conv-q" type="search" placeholder="Buscar por nome ou especialidade"></label>
-        <label><span class="sr">Categoria</span><select id="conv-kind"><option value="">Todas as categorias</option></select></label>
-        <label><span class="sr">Cidade</span><select id="conv-city"><option value="">Todas as cidades</option></select></label>
-      </div>
+    <div class="reveal">
+      <p class="conv-count" id="conv-sum">Carregando categorias…</p>
+      <div class="conv-cats" id="conv-cats"></div>
     </div>
-
-    <div class="conv-bar"><p class="conv-count" id="conv-count" aria-live="polite">Carregando convênios…</p><button type="button" class="conv-toggle" id="conv-toggle">Abrir todos</button></div>
-    <div class="conv-list" id="conv-list"></div>
-    <div class="conv-empty" id="conv-empty" hidden>
-      <b>Nenhum convênio encontrado</b>
-      <span>Tente outra cidade ou categoria, ou fale com a gente pelo WhatsApp.</span>
-    </div>
-    <p class="conv-note" id="conv-note" hidden></p>
   </div>
 </section>
 
@@ -955,7 +879,7 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
           <a href="https://www.facebook.com/paxefunerariaoliveira" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
         </div>
       </div>
-      <div><h4>Navegue</h4><ul><li><a href="#empresa">A Empresa</a></li><li><a href="#planos">Planos</a></li><li><a href="#beneficios">Benefícios</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#unidades">Unidades</a></li></ul></div>
+      <div><h4>Navegue</h4><ul><li><a href="#planos">Planos</a></li><li><a href="historia/">Nossa história</a></li><li><a href="#beneficios">Benefícios</a></li><li><a href="convenios/">Convênios</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#unidades">Unidades</a></li><li><a href="#contato">Contato</a></li></ul></div>
       <div><h4>Atendimento</h4><ul><li>Plantão 24h<br>(67) 99976-3769</li><li>Escritório<br>(67) 99947-3005</li><li>07h às 17h</li></ul></div>
       <div><h4>Matriz</h4><ul><li>Av. Nove de Julho, 802</li><li>Centro, Fátima do Sul, MS</li><li>CEP 79740-000</li><li>contato@paxoliveira.com.br</li></ul></div>
     </div>
@@ -1007,7 +931,7 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
   menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');}});
 
   // Link ativo conforme rolagem
-  var links=[].slice.call(menu.querySelectorAll('a'));
+  var links=[].slice.call(menu.querySelectorAll('a[href^="#"]'));
   var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
   function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});links.forEach(function(a,i){a.classList.toggle('active',i===cur);});}
   window.addEventListener('scroll',spy,{passive:true});spy();
@@ -1046,112 +970,30 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
 })();
 </script>
 <script>
-(function(){
-  var d=document.getElementById('story'),o=document.getElementById('story-open');
-  if(!d||!o)return;
-  function close(){ if(d.open) d.close(); }
-  o.addEventListener('click',function(){ if(d.showModal){d.showModal();}else{d.setAttribute('open','');} d.scrollTop=0; });
-  document.getElementById('story-close').addEventListener('click',close);
-  document.getElementById('story-close-2').addEventListener('click',close);
-  d.addEventListener('click',function(e){ if(e.target===d) close(); });
-  d.addEventListener('close',function(){ o.focus(); });
-})();
-</script>
-<script>
-/* ============================================================
-   CONVÊNIOS — como atualizar
-   1) Edite a planilha Google "Convênios Pax Oliveira"
-      (linha 1 = títulos das colunas; não mude esses títulos).
-   2) Na planilha: Arquivo > Compartilhar > Publicar na Web >
-      escolha a aba dos convênios e o formato "CSV" > Publicar.
-   3) Cole o link gerado entre as aspas abaixo (só uma vez).
-   Depois disso, qualquer mudança na planilha aparece no site
-   sozinha (o Google pode levar alguns minutos para atualizar).
-   Colunas: Ativo | Tipo | Nome | Especialidade | Cidade |
-            Endereço | Telefone | WhatsApp | Desconto | Observação
-   ============================================================ */
+/* CONVÊNIOS: o resumo da página inicial e a página /convenios leem a mesma planilha.
+   Para trocar a planilha, troque o link aqui E em convenios/index.html. */
 var CONVENIOS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZ9TEw6kcINSbY4BgdrA0hIgnnvigQRIGqdkjTH4ApTX93ocmtq7ATxu9fiIQXIdJN5PWN9AO9ipK-/pub?gid=2144137582&single=true&output=csv";
-
-/* Usado só enquanto o link acima estiver vazio */
-var CONVENIOS_EXEMPLO = [
-  {tipo:"Clínica",nome:"Clínica Exemplo (substituir)",especialidade:"Clínico geral e pediatria",cidade:"Fátima do Sul",endereco:"Rua Exemplo, 100, Centro",telefone:"(67) 3467-0000",whatsapp:"(67) 99999-0000",desconto:"Até 30% de desconto",observacao:"Agendar por telefone"},
-  {tipo:"Hospital",nome:"Hospital Exemplo (substituir)",especialidade:"Pronto atendimento e internação",cidade:"Ivinhema",endereco:"Av. Exemplo, 200",telefone:"(67) 3442-0000",whatsapp:"",desconto:"Condições especiais",observacao:""},
-  {tipo:"Especialista",nome:"Dr(a). Exemplo (substituir)",especialidade:"Cardiologia",cidade:"Glória de Dourados",endereco:"Rua Exemplo, 300",telefone:"",whatsapp:"(67) 99999-0001",desconto:"Consulta com 25% off",observacao:""},
-  {tipo:"Laboratório",nome:"Laboratório Exemplo (substituir)",especialidade:"Análises clínicas",cidade:"Deodápolis",endereco:"Rua Exemplo, 400",telefone:"(67) 3448-0000",whatsapp:"",desconto:"Até 40% em exames",observacao:""},
-  {tipo:"Odontologia",nome:"Odonto Exemplo (substituir)",especialidade:"Clínica geral e ortodontia",cidade:"Vicentina",endereco:"Rua Exemplo, 500",telefone:"",whatsapp:"(67) 99999-0002",desconto:"Avaliação gratuita",observacao:""},
-  {tipo:"Imagem",nome:"Centro de Imagem Exemplo (substituir)",especialidade:"Ultrassom e raio-X",cidade:"Fátima do Sul",endereco:"Rua Exemplo, 600",telefone:"(67) 3467-0001",whatsapp:"",desconto:"Até 20% de desconto",observacao:""}
-];
-
 (function(){
-  var listEl=document.getElementById('conv-list'); if(!listEl) return;
-  var q=document.getElementById('conv-q'), kindSel=document.getElementById('conv-kind'), citySel=document.getElementById('conv-city'),
-      countEl=document.getElementById('conv-count'), emptyEl=document.getElementById('conv-empty'), noteEl=document.getElementById('conv-note'),
-      viewEl=document.querySelector('.conv-view'), toggleBtn=document.getElementById('conv-toggle');
-  var data=[], view='tipo';
+  var box=document.getElementById('conv-cats'),sum=document.getElementById('conv-sum');if(!box)return;
   var ICON={'clinica':'i-steth','hospital':'i-shield','especialista':'i-steth','laboratorio':'i-lab','odontologia':'i-tooth','dentista':'i-tooth','imagem':'i-scan','farmacia':'i-heart'};
   function norm(t){return String(t||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();}
   function esc(t){return String(t||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  function digits(t){return String(t||'').replace(/\D/g,'');}
-  function cmp(a,b){return a.localeCompare(b,'pt-BR');}
-  function parseCSV(txt){
-    var rows=[],row=[],f='',i=0,inq=false,c; txt=txt.replace(/^﻿/,'');
-    var l0=txt.split('\n')[0], sep=(l0.split(';').length>l0.split(',').length)?';':',';
-    for(;i<txt.length;i++){c=txt[i];
-      if(inq){ if(c=='"'){ if(txt[i+1]=='"'){f+='"';i++;} else inq=false; } else f+=c; }
-      else if(c=='"') inq=true; else if(c==sep){row.push(f);f='';}
-      else if(c=='\n'){row.push(f);rows.push(row);row=[];f='';} else if(c!='\r') f+=c;
-    }
-    if(f!==''||row.length){row.push(f);rows.push(row);} return rows;
-  }
-  var KEYS={ativo:'ativo',tipo:'tipo',categoria:'tipo',nome:'nome',especialidade:'especialidade',cidade:'cidade',endereco:'endereco',telefone:'telefone',whatsapp:'whatsapp',desconto:'desconto',observacao:'observacao',obs:'observacao'};
-  function fromRows(rows){
-    if(!rows.length) return [];
-    var head=rows[0].map(function(h){return KEYS[norm(h).replace(/[^a-z]/g,'')]||'';});
-    return rows.slice(1).map(function(r){var o={};head.forEach(function(k,j){if(k)o[k]=(r[j]||'').trim();});return o;})
-      .filter(function(o){return o.nome && !/^(nao|n|0|false|inativo)$/.test(norm(o.ativo));});
-  }
-  function cap(t){t=(t||'').trim(); return t?t.charAt(0).toUpperCase()+t.slice(1):'';}
-  function opts(sel,label,arr){sel.innerHTML='<option value="">'+label+'</option>'+arr.map(function(c){return '<option>'+esc(c)+'</option>';}).join('');}
-  function setup(list,isExample){
-    data=list.map(function(o){o.tipo=cap(o.tipo)||'Outros';o.cidade=cap(o.cidade)||'Outras cidades';o._s=norm([o.nome,o.especialidade,o.tipo,o.cidade,o.endereco].join(' '));return o;});
-    data.sort(function(a,b){return cmp(a.nome,b.nome);});
-    var k={},c={}; data.forEach(function(o){k[o.tipo]=1;c[o.cidade]=1;});
-    opts(kindSel,'Todas as categorias',Object.keys(k).sort(cmp)); opts(citySel,'Todas as cidades',Object.keys(c).sort(cmp));
-    if(isExample){noteEl.hidden=false;noteEl.textContent='Exibindo convênios de exemplo. Conecte a planilha de convênios para mostrar a rede real.';}
-    render();
-  }
-  function row(o){
-    var tel=digits(o.telefone), wa=digits(o.whatsapp); if(wa&&wa.length<=11) wa='55'+wa;
-    var other = view==='tipo' ? o.cidade : o.tipo;
-    return '<li class="cr"><div class="cr-main"><b>'+esc(o.nome)+'</b>'+(o.especialidade?'<span>'+esc(o.especialidade)+'</span>':'')+
-      ((o.endereco||o.observacao)?'<em>'+esc([o.endereco,o.observacao].filter(Boolean).join(' · '))+'</em>':'')+'</div>'+
-      '<div class="cr-meta"><svg><use href="#'+(view==='tipo'?'i-pin':(ICON[norm(o.tipo)]||'i-heart'))+'"/></svg><span>'+esc(other)+'</span></div>'+
-      (o.desconto?'<span class="cr-off">'+esc(o.desconto)+'</span>':'<span></span>')+
-      '<div class="cr-act">'+(tel?'<a href="tel:+55'+tel.replace(/^55/,'')+'" aria-label="Ligar para '+esc(o.nome)+'" title="'+esc(o.telefone)+'"><svg><use href="#i-phone"/></svg></a>':'')+
-      (wa?'<a class="wa" href="https://wa.me/'+wa+'" target="_blank" rel="noopener" aria-label="WhatsApp de '+esc(o.nome)+'"><svg><use href="#i-wa"/></svg></a>':'')+'</div></li>';
-  }
-  function render(){
-    var t=norm(q.value), kf=kindSel.value, cf=citySel.value;
-    var list=data.filter(function(o){return (!kf||o.tipo===kf)&&(!cf||o.cidade===cf)&&(!t||o._s.indexOf(t)>-1);});
-    var groups={}; list.forEach(function(o){(groups[o[view]]=groups[o[view]]||[]).push(o);});
-    var names=Object.keys(groups).sort(cmp);
-    listEl.innerHTML=names.map(function(g,i){
-      var ic=view==='tipo'?(ICON[norm(g)]||'i-heart'):'i-pin';
-      return '<details class="cg"'+(t?' open':'')+'><summary><span class="cg-ic"><svg><use href="#'+ic+'"/></svg></span>'+esc(g)+' <small>'+groups[g].length+'</small><span class="cg-chev" aria-hidden="true"></span></summary><ul>'+groups[g].map(row).join('')+'</ul></details>';
-    }).join('');
-    emptyEl.hidden=list.length>0; toggleBtn.hidden=names.length<2; syncToggle();
-    countEl.textContent=list.length+(list.length===1?' convênio':' convênios')+' em '+names.length+(view==='tipo'?(names.length===1?' categoria':' categorias'):(names.length===1?' cidade':' cidades'));
-  }
-  function syncToggle(){var d=listEl.querySelectorAll('details'),all=[].every.call(d,function(x){return x.open;});toggleBtn.textContent=all?'Fechar todos':'Abrir todos';}
-  listEl.addEventListener('toggle',syncToggle,true);
-  toggleBtn.addEventListener('click',function(){var d=listEl.querySelectorAll('details'),all=[].every.call(d,function(x){return x.open;});[].forEach.call(d,function(x){x.open=!all;});syncToggle();});
-  viewEl.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;view=b.getAttribute('data-v');
-    [].forEach.call(viewEl.querySelectorAll('button'),function(x){x.setAttribute('aria-checked',x===b?'true':'false');});render();});
-  q.addEventListener('input',render); kindSel.addEventListener('change',render); citySel.addEventListener('change',render);
-  if(!CONVENIOS_CSV_URL){setup(CONVENIOS_EXEMPLO,true);return;}
-  fetch(CONVENIOS_CSV_URL,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text();})
-    .then(function(t){setup(fromRows(parseCSV(t)),false);})
-    .catch(function(){countEl.textContent='Não foi possível carregar a lista de convênios agora.';emptyEl.hidden=false;toggleBtn.hidden=true;});
+  function parseCSV(txt){var rows=[],row=[],f='',i=0,inq=false,c;txt=txt.replace(/^﻿/,'');var l0=txt.split('\n')[0],sep=(l0.split(';').length>l0.split(',').length)?';':',';
+    for(;i<txt.length;i++){c=txt[i];if(inq){if(c=='"'){if(txt[i+1]=='"'){f+='"';i++;}else inq=false;}else f+=c;}else if(c=='"')inq=true;else if(c==sep){row.push(f);f='';}else if(c=='\n'){row.push(f);rows.push(row);row=[];f='';}else if(c!='\r')f+=c;}
+    if(f!==''||row.length){row.push(f);rows.push(row);}return rows;}
+  function done(){sum.textContent='Veja a lista completa de convênios.';}
+  if(!CONVENIOS_CSV_URL){done();return;}
+  fetch(CONVENIOS_CSV_URL,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(t){
+    var rows=parseCSV(t);if(!rows.length)throw 0;var h=rows[0].map(function(x){return norm(x).replace(/[^a-z]/g,'');});
+    var it=h.indexOf('tipo');if(it<0)it=h.indexOf('categoria');var in_=h.indexOf('nome'),ia=h.indexOf('ativo');
+    var k={},n=0,cities={},ic=h.indexOf('cidade');
+    rows.slice(1).forEach(function(r){if(!(r[in_]||'').trim())return;if(ia>-1&&/^(nao|n|0|false|inativo)$/.test(norm(r[ia])))return;
+      var tp=(r[it]||'').trim()||'Outros';tp=tp.charAt(0).toUpperCase()+tp.slice(1);k[tp]=(k[tp]||0)+1;n++;if(ic>-1&&r[ic])cities[norm(r[ic])]=1;});
+    if(!n)throw 0;var nc=Object.keys(cities).length;
+    sum.textContent=n+(n===1?' convênio':' convênios')+(nc?' em '+nc+(nc===1?' cidade':' cidades'):'')+'. Escolha uma categoria:';
+    box.innerHTML=Object.keys(k).sort(function(a,b){return a.localeCompare(b,'pt-BR');}).map(function(t){
+      return '<a href="convenios/?tipo='+encodeURIComponent(t)+'"><i><svg><use href="#'+(ICON[norm(t)]||'i-heart')+'"/></svg></i>'+esc(t)+' <small>'+k[t]+'</small></a>';}).join('');
+  }).catch(done);
 })();
 </script>
 </body></html>
