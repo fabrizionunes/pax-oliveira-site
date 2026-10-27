@@ -484,6 +484,10 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
 .net-card .conv-cats a i svg{width:15px;height:15px}
 .net-btn{justify-self:start;white-space:normal}
 .net-btn .arr{transition:transform .2s}.net-btn:hover .arr{transform:translateX(4px)}
+.plan li small{display:block;color:var(--muted);font-size:.84rem;margin-top:2px}
+.plan-list li:nth-child(n+6){display:none}
+.plan-list.open li{display:grid}
+.plan-more{font:inherit;font-weight:700;font-size:.88rem;color:var(--royal);background:none;border:0;padding:0;cursor:pointer;justify-self:start;align-self:flex-start;text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -595,7 +599,7 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
     <div class="sec-head reveal">
       <span class="eyebrow">Planos de assistência familiar</span>
       <h2>Escolha o plano do tamanho da sua família</h2>
-      <p>Todos os planos incluem funeral completo, capela, carro para cortejo, serviço de café no velório e descontos em consultas e exames.</p>
+      <p>Todos os planos incluem ornamentação da urna, carro para cortejo, providências legais do funeral, translado e kit lanche para o velório.</p>
     </div>
     <div class="plans">
       <article class="plan reveal">
@@ -613,12 +617,14 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
         <h3>Bronze</h3>
         <p class="who">Titular, cônjuge e filhos menores de 21 anos.</p>
         <div class="km"><b>60</b><span>km de translado</span></div>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Urna sextavada com verniz PU</li>
-          <li><svg><use href="#i-check"/></svg>Flores, véu, 4 velas e livro de presença</li>
-          <li><svg><use href="#i-check"/></svg>Carro para cortejo</li>
-          <li><svg><use href="#i-check"/></svg>Café, chá e pães para o velório</li>
-          <li><svg><use href="#i-check"/></svg>Nota de falecimento na rádio</li>
+        <ul class="plan-list">
+          <li><svg><use href="#i-check"/></svg>Ornamentação da urna com flores naturais ou artificiais, disponíveis na ocasião</li>
+          <li><svg><use href="#i-check"/></svg>Carro para cortejo fúnebre</li>
+          <li><svg><use href="#i-check"/></svg>Translado até 60 km (via terrestre)</li>
+          <li><svg><use href="#i-check"/></svg>Providências administrativas e legais para realização do funeral</li>
+          <li><svg><use href="#i-check"/></svg>Paramentos</li>
+          <li><svg><use href="#i-check"/></svg>1 véu, 4 velas e 1 livro de presença</li>
+          <li><svg><use href="#i-check"/></svg><span>Kit lanche<small>1 pacote de café 500 g, 1 pacote de chá, 1 kg de açúcar, 2 pacotes de bolacha de sal, 2 pacotes de bolacha maisena, 2 pacotes de copos descartáveis de 200 ml, 50 pães franceses e 1 pote de margarina 500 g</small></span></li>
         </ul>
         <a class="btn btn-ghost" href="#contato" data-plan="Bronze">Quero o Bronze</a>
       </article>
@@ -635,14 +641,18 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
 <path d="M98 13 Q98 20 105 20 Q98 20 98 27 Q98 20 91 20 Q98 20 98 13Z" fill="#fff" opacity="1"/><path d="M18 31 Q18 36 23 36 Q18 36 18 41 Q18 36 13 36 Q18 36 18 31Z" fill="#fff" opacity="0.9"/><path d="M104 58 Q104 62 108 62 Q104 62 104 66 Q104 62 100 62 Q104 62 104 58Z" fill="#fff" opacity="0.8"/>
 </svg></div>
         <h3>Prata</h3>
-        <p class="who">Titular, cônjuge, pais, sogros e filhos menores de 21 anos.</p>
+        <p class="who">Titular, cônjuge, pai e mãe ou sogro e sogra, e filhos menores de 21 anos.</p>
         <div class="km"><b>120</b><span>km de translado</span></div>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Tanatopraxia</li>
-          <li><svg><use href="#i-check"/></svg>Capela mortuária e cerimonial</li>
-          <li><svg><use href="#i-check"/></svg>Urna sextavada com visor e alça dourada</li>
-          <li><svg><use href="#i-check"/></svg>Serviço de café ampliado</li>
-          <li><svg><use href="#i-check"/></svg>Tudo do plano Bronze</li>
+        <ul class="plan-list">
+          <li><svg><use href="#i-check"/></svg>Capela mortuária</li>
+          <li><svg><use href="#i-check"/></svg>Tanatopraxia (50% do valor)</li>
+          <li><svg><use href="#i-check"/></svg>Translado até 120 km (via terrestre)</li>
+          <li><svg><use href="#i-check"/></svg>Ornamentação da urna com flores naturais ou artificiais, disponíveis na ocasião</li>
+          <li><svg><use href="#i-check"/></svg>Carro para cortejo fúnebre</li>
+          <li><svg><use href="#i-check"/></svg>Providências administrativas e legais para realização do funeral</li>
+          <li><svg><use href="#i-check"/></svg>Paramentos</li>
+          <li><svg><use href="#i-check"/></svg>1 véu, 4 velas e 1 livro de presença</li>
+          <li><svg><use href="#i-check"/></svg><span>Kit lanche<small>2 pacotes de café 500 g, 1 pacote de chá, 2 kg de açúcar, 2 pacotes de bolacha de sal, 2 pacotes de bolacha maisena, 2 pacotes de copos descartáveis de 200 ml, 1 kg de presunto, 1 kg de muçarela, 100 pães franceses e 1 pote de margarina 500 g</small></span></li>
         </ul>
         <a class="btn btn-ghost" href="#contato" data-plan="Prata">Quero o Prata</a>
       </article>
@@ -659,14 +669,18 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
 <path d="M98 13 Q98 20 105 20 Q98 20 98 27 Q98 20 91 20 Q98 20 98 13Z" fill="#fff" opacity="1"/><path d="M18 31 Q18 36 23 36 Q18 36 18 41 Q18 36 13 36 Q18 36 18 31Z" fill="#fff" opacity="0.9"/><path d="M104 58 Q104 62 108 62 Q104 62 104 66 Q104 62 100 62 Q104 62 104 58Z" fill="#fff" opacity="0.8"/>
 </svg></div>
         <h3>Ouro</h3>
-        <p class="who">Titular, cônjuge, pais, sogros e filhos sem limite de idade.</p>
+        <p class="who">Titular, cônjuge, pai e mãe ou sogro e sogra, e filhos sem limite de idade.</p>
         <div class="km"><b>180</b><span>km de translado</span></div>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Tanatopraxia e capela mortuária</li>
-          <li><svg><use href="#i-check"/></svg>Urna entalhada em pinus, tom mogno, com travesseiro</li>
-          <li><svg><use href="#i-check"/></svg>2 pacotes de café e 100 pães</li>
-          <li><svg><use href="#i-check"/></svg>Descontos em saúde para toda a família</li>
-          <li><svg><use href="#i-check"/></svg>Tudo do plano Prata</li>
+        <ul class="plan-list">
+          <li><svg><use href="#i-check"/></svg>Tanatopraxia</li>
+          <li><svg><use href="#i-check"/></svg>Capela mortuária</li>
+          <li><svg><use href="#i-check"/></svg>Translado até 180 km (via terrestre)</li>
+          <li><svg><use href="#i-check"/></svg>Ornamentação da urna com flores naturais ou artificiais, disponíveis na ocasião</li>
+          <li><svg><use href="#i-check"/></svg>Carro para cortejo fúnebre</li>
+          <li><svg><use href="#i-check"/></svg>Providências administrativas e legais para realização do funeral</li>
+          <li><svg><use href="#i-check"/></svg>Paramentos</li>
+          <li><svg><use href="#i-check"/></svg>1 véu, 4 velas e 1 livro de presença</li>
+          <li><svg><use href="#i-check"/></svg><span>Kit lanche<small>2 pacotes de café 500 g, 1 pacote de chá, 2 kg de açúcar, 2 pacotes de bolacha de sal, 2 pacotes de bolacha maisena, 2 pacotes de copos descartáveis de 200 ml, 1 kg de presunto, 1 kg de muçarela, 100 pães franceses e 1 pote de margarina 500 g</small></span></li>
         </ul>
         <a class="btn btn-ghost" href="#contato" data-plan="Ouro">Quero o Ouro</a>
       </article>
@@ -686,14 +700,21 @@ footer{background:var(--tint);color:var(--ink);border-top:1px solid var(--line);
 <polygon points="48,30 58,30 52,46" fill="#fff" opacity=".8"/>
 <path d="M100 14 Q100 22 108 22 Q100 22 100 30 Q100 22 92 22 Q100 22 100 14Z" fill="#fff" opacity="1"/><path d="M18 24 Q18 30 24 30 Q18 30 18 36 Q18 30 12 30 Q18 30 18 24Z" fill="#fff" opacity="0.9"/><path d="M102 79 Q102 84 107 84 Q102 84 102 89 Q102 84 97 84 Q102 84 102 79Z" fill="#fff" opacity="0.85"/><path d="M26 92 Q26 96 30 96 Q26 96 26 100 Q26 96 22 96 Q26 96 26 92Z" fill="#fff" opacity="0.8"/></svg></div>
         <h3>Diamante</h3>
-        <p class="who">Família completa, filhos sem limite de idade e mais um agregado até 65 anos.</p>
+        <p class="who">Titular, cônjuge, pai e mãe ou sogro e sogra, filhos sem limite de idade e 1 agregado até 65 anos.</p>
         <div class="km"><b>240</b><span>km de translado</span></div>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Urna premium entalhada com renda e travesseiro</li>
-          <li><svg><use href="#i-check"/></svg>Coroa de flores inclusa</li>
-          <li><svg><use href="#i-check"/></svg>Terno incluso</li>
-          <li><svg><use href="#i-check"/></svg>Serviço de alimentação completo</li>
-          <li><svg><use href="#i-check"/></svg>Tudo do plano Ouro</li>
+        <ul class="plan-list">
+          <li><svg><use href="#i-check"/></svg>Urna especial (fora de medida)</li>
+          <li><svg><use href="#i-check"/></svg>1 coroa de flores</li>
+          <li><svg><use href="#i-check"/></svg>1 terno (feminino ou masculino)</li>
+          <li><svg><use href="#i-check"/></svg>Tanatopraxia</li>
+          <li><svg><use href="#i-check"/></svg>Capela mortuária</li>
+          <li><svg><use href="#i-check"/></svg>Translado até 240 km (via terrestre)</li>
+          <li><svg><use href="#i-check"/></svg>Ornamentação da urna com flores naturais ou artificiais, disponíveis na ocasião</li>
+          <li><svg><use href="#i-check"/></svg>Carro para cortejo fúnebre</li>
+          <li><svg><use href="#i-check"/></svg>Providências administrativas e legais para realização do funeral</li>
+          <li><svg><use href="#i-check"/></svg>Paramentos</li>
+          <li><svg><use href="#i-check"/></svg>1 véu, 4 velas e 1 livro de presença</li>
+          <li><svg><use href="#i-check"/></svg><span>Kit lanche<small>2 pacotes de café 500 g, 1 pacote de chá, 2 kg de açúcar, 2 pacotes de bolacha de sal, 2 pacotes de bolacha maisena, 2 pacotes de copos descartáveis de 200 ml, 1 kg de presunto, 1 kg de muçarela, 100 pães franceses e 1 pote de margarina 500 g</small></span></li>
         </ul>
         <a class="btn btn-primary" href="#contato" data-plan="Diamante">Quero o Diamante</a>
       </article>
@@ -1114,6 +1135,17 @@ var CONVENIOS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZ9TEw
     box.innerHTML=Object.keys(k).sort(function(a,b){return a.localeCompare(b,'pt-BR');}).map(function(t){
       return '<a href="convenios/?tipo='+encodeURIComponent(t)+'"><i><svg><use href="#'+(ICON[norm(t)]||'i-heart')+'"/></svg></i>'+esc(t)+' <small>'+k[t]+'</small></a>';}).join('');
   }).catch(done);
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.plan-list').forEach(function(ul){
+    var n=ul.children.length; if(n<=5) return;
+    var b=document.createElement('button'); b.type='button'; b.className='plan-more';
+    function lbl(){var o=ul.classList.contains('open');b.textContent=o?'Ver menos':'Ver todos os itens (+'+(n-5)+')';b.setAttribute('aria-expanded',o);}
+    b.addEventListener('click',function(){ul.classList.toggle('open');lbl();});
+    lbl(); ul.insertAdjacentElement('afterend',b);
+  });
 })();
 </script>
 </body></html>
